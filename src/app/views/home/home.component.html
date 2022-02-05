@@ -1,0 +1,20 @@
+<mat-card class="home mat-elevation-z3">
+  <mat-card-title class="title"> Bem Vindo! </mat-card-title>
+  <mat-card-subtitle class="subtitle">
+    Sistema para exemplificar a obtenção de listas de chamada a partir do novo
+    regulamento de vagas por cotas.
+  </mat-card-subtitle>
+</mat-card>
+<br /><br />
+
+<span
+  >Para inserir novo curso, anexe e envie novo arquivo com dados de
+  candidatos:</span
+>
+<br />
+<input
+  class="csvInput"
+  type="file"
+  (input)="sendCsvFile($event)"
+  accept=".csv"
+/>

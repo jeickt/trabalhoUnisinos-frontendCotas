@@ -1,0 +1,21 @@
+span {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+span > input {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.pagSelecionada {
+  background-color: #007fff;
+}
+
+.pagInexistente {
+  background-color: gray;
+}
+
+.submeterResultado {
+  background-color: #dc143c;
+}

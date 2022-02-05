@@ -1,0 +1,21 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer > span {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 5px;
+  padding: 5px;
+}
+
+.footer > a {
+  margin: 5px;
+  padding: 5px;
+}

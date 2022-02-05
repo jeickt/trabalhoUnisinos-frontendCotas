@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    class="sidenav"
+    mode="side"
+    opened
+    fixedInViewport="true"
+    fixedTopGap="64"
+  >
+    <mat-nav-list class="nav-list">
+      <div *ngFor="let curso of cursos">
+        <a mat-list-item (click)="onClickNavigate(curso)"> {{ curso.nome }} </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content" autosize="true">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
