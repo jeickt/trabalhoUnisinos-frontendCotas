@@ -1,4 +1,7 @@
+import { CursoService } from './../../services/curso.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NavComponent } from './nav.component';
 
@@ -8,9 +11,10 @@ describe('NavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [NavComponent],
+      providers: [HttpClient, HttpHandler, CursoService],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -65,14 +65,14 @@ export class CandidatoService {
                   )
               );
             }
-          } else if (!cand.cotaRendaInferior) {
+          } else if ((el = 'RI')) {
             cand.cotaRendaInferior = !cand.cotaRendaInferior;
             if (!cand.cotaRendaInferior) {
               cand.cotasAConcorrer = cand.cotasAConcorrer.filter(
                 (el) => !(Array.of('C2', 'C3', 'C4', 'C5').indexOf(el) >= 0)
               );
             }
-          } else if (!cand.cotaPretoPardo) {
+          } else if ((el = 'PP')) {
             cand.cotaPretoPardo = !cand.cotaPretoPardo;
             if (!cand.cotaPretoPardo) {
               cand.cotasAConcorrer = cand.cotasAConcorrer.filter(
@@ -80,14 +80,14 @@ export class CandidatoService {
                   !(Array.of('C2', 'C3', 'C6', 'C7', 'C11').indexOf(el) >= 0)
               );
             }
-          } else if (!cand.cotaIndigena) {
+          } else if ((el = 'I')) {
             cand.cotaIndigena = !cand.cotaIndigena;
             if (!cand.cotaIndigena) {
               cand.cotasAConcorrer = cand.cotasAConcorrer.filter(
                 (el) => !(Array.of('C2', 'C3', 'C6', 'C7').indexOf(el) >= 0)
               );
             }
-          } else if (!cand.cotaPCD) {
+          } else if ((el = 'PCD')) {
             cand.cotaPCD = !cand.cotaPCD;
             if (!cand.cotaPCD) {
               cand.cotasAConcorrer = cand.cotasAConcorrer.filter(

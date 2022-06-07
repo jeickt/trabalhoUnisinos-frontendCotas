@@ -1,118 +1,120 @@
-<span>
-  <input
-    type="submit"
-    value="Reiniciar"
-    style="margin-left: 30px; background-color: red"
-    class="btn btn-xs btn-success"
-    [disabled]="false"
-    (click)="deleteData()"
-  />
-  <input
-    type="submit"
-    value="Submeter resultado de chamada"
-    style="margin-left: 65px"
-    class="btn btn-xs btn-success submeterResultado"
-    [disabled]="chamada !== pagina"
-    (click)="callResultFile()"
-  />
-  <input
-    type="submit"
-    value="Chamada 3"
-    class="btn btn-xs btn-success"
-    [disabled]="chamada < 3"
-    [ngClass]="[pagina === 3 ? 'pagSelecionada' : '']"
-    [ngClass]="[chamada < 3 ? 'pagInexistente' : '']"
-    (click)="retrieveList(3)"
-  />
-  <input
-    type="submit"
-    value="Chamada 2"
-    class="btn btn-xs btn-success"
-    [disabled]="chamada < 2"
-    [ngClass]="[pagina === 2 ? 'pagSelecionada' : '']"
-    [ngClass]="[chamada < 2 ? 'pagInexistente' : '']"
-    (click)="retrieveList(2)"
-  />
-  <input
-    type="submit"
-    value="Chamada 1"
-    class="btn btn-xs btn-success"
-    [disabled]="chamada < 1"
-    [ngClass]="[pagina === 1 ? 'pagSelecionada' : '']"
-    [ngClass]="[chamada < 1 ? 'pagInexistente' : '']"
-    (click)="retrieveList(1)"
-  />
-</span>
-<table class="table table-striped table-bordered table-hover">
-  <tbody>
-    <tr>
-      <th>Candidato</th>
-      <th class="text-center">Matriculado</th>
-      <th class="text-center">Concorrente</th>
-      <th class="text-center">EP</th>
-      <th class="text-center">RI</th>
-      <th class="text-center">PP</th>
-      <th class="text-center">I</th>
-      <th class="text-center">PCD</th>
-    </tr>
-    <tr *ngFor="let candidato of candidatos">
-      <td class="cand-nome">
-        {{ candidato.nome }}
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.matriculado > 0"
-          (click)="toggleMatriculado(candidato)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.concorrenteAtivo"
-          [disabled]="candidato.matriculado > 0"
-          (click)="toggleConcorrente(candidato)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.cotaEscolaPublica"
-          (click)="toggleCotas(candidato, 'EP', candidato.cotaEscolaPublica)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.cotaRendaInferior"
-          (click)="toggleCotas(candidato, 'RI', candidato.cotaRendaInferior)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.cotaPretoPardo"
-          (click)="toggleCotas(candidato, 'PP', candidato.cotaPretoPardo)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.cotaIndigena"
-          (click)="toggleCotas(candidato, 'I', candidato.cotaIndigena)"
-        />
-      </td>
-      <td style="width: 40px" class="text-center">
-        <input
-          type="checkbox"
-          [checked]="candidato.cotaPCD"
-          (click)="toggleCotas(candidato, 'PCD', candidato.cotaPCD)"
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <span>
+    <input
+      type="submit"
+      value="Reiniciar"
+      style="margin-left: 30px; background-color: red"
+      class="btn btn-xs btn-success"
+      [disabled]="false"
+      (click)="deleteData()"
+    />
+    <input
+      type="submit"
+      value="Submeter resultado de chamada"
+      style="margin-left: 65px"
+      class="btn btn-xs btn-success submeterResultado"
+      [disabled]="chamada !== pagina"
+      (click)="callResultFile()"
+    />
+    <input
+      type="submit"
+      value="Chamada 3"
+      class="btn btn-xs btn-success"
+      [disabled]="chamada < 3"
+      [ngClass]="[pagina === 3 ? 'pagSelecionada' : '']"
+      [ngClass]="[chamada < 3 ? 'pagInexistente' : '']"
+      (click)="retrieveList(3)"
+    />
+    <input
+      type="submit"
+      value="Chamada 2"
+      class="btn btn-xs btn-success"
+      [disabled]="chamada < 2"
+      [ngClass]="[pagina === 2 ? 'pagSelecionada' : '']"
+      [ngClass]="[chamada < 2 ? 'pagInexistente' : '']"
+      (click)="retrieveList(2)"
+    />
+    <input
+      type="submit"
+      value="Chamada 1"
+      class="btn btn-xs btn-success"
+      [disabled]="chamada < 1"
+      [ngClass]="[pagina === 1 ? 'pagSelecionada' : '']"
+      [ngClass]="[chamada < 1 ? 'pagInexistente' : '']"
+      (click)="retrieveList(1)"
+    />
+  </span>
+  <table class="table table-striped table-bordered table-hover">
+    <tbody>
+      <tr>
+        <th>Candidato</th>
+        <th class="text-center">Matriculado</th>
+        <th class="text-center">Concorrente</th>
+        <th class="text-center">EP</th>
+        <th class="text-center">RI</th>
+        <th class="text-center">PP</th>
+        <th class="text-center">I</th>
+        <th class="text-center">PCD</th>
+      </tr>
+      <tr *ngFor="let candidato of candidatos">
+        <td class="cand-nome">
+          {{ candidato.nome }}
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.matriculado > 0"
+            (click)="toggleMatriculado(candidato)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.concorrenteAtivo"
+            [disabled]="candidato.matriculado > 0"
+            (click)="toggleConcorrente(candidato)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.cotaEscolaPublica"
+            (click)="toggleCotas(candidato, 'EP', candidato.cotaEscolaPublica)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.cotaRendaInferior"
+            (click)="toggleCotas(candidato, 'RI', candidato.cotaRendaInferior)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.cotaPretoPardo"
+            (click)="toggleCotas(candidato, 'PP', candidato.cotaPretoPardo)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.cotaIndigena"
+            (click)="toggleCotas(candidato, 'I', candidato.cotaIndigena)"
+          />
+        </td>
+        <td style="width: 40px" class="text-center">
+          <input
+            type="checkbox"
+            [checked]="candidato.cotaPCD"
+            (click)="toggleCotas(candidato, 'PCD', candidato.cotaPCD)"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<p *ngIf="candidatos && candidatos.length == 0">
-  Nenhum candidato existente para a chamada.
-</p>
+  <p *ngIf="candidatos && candidatos.length == 0">
+    Nenhum candidato existente para a chamada.
+  </p>
+</div>

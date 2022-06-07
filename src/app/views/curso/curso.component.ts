@@ -76,7 +76,6 @@ export class CursoComponent implements OnInit {
   }
 
   async gerarLista(chamada: number): Promise<Candidato[]> {
-    console.log(chamada);
     let promise = new Promise<Candidato[]>((resolve) => {
       this.candidatoService
         .generateList(this.cursoId, chamada)
@@ -100,18 +99,17 @@ export class CursoComponent implements OnInit {
   }
 
   callResultFile(): void {
-    let promise = new Promise<Candidato[]>((resolve) => {
-      this.candidatoService
-        .callResultFile(this.candidatos, this.cotasAExcluir)
-        .subscribe((response) => {
-          console.log(response);
-          resolve(response);
-        });
-    });
+    // let promise = new Promise<Candidato[]>((resolve) => {
+    //   this.candidatoService
+    //     .callResultFile(this.candidatos, this.cotasAExcluir)
+    //     .subscribe((response) => {
+    //       resolve(response);
+    //     });
+    // });
 
-    promise.then((resultado) => {
-      console.log(resultado);
-    });
+    // promise.then((resultado) => {
+    //   console.log(resultado);
+    // });
     setTimeout(() => {
       let promise = this.gerarLista(++this.chamada);
       promise.then((resultado) => {
