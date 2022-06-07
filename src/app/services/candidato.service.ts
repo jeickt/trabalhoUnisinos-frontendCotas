@@ -8,7 +8,7 @@ import { EventEmitterService } from '.';
 
 @Injectable()
 export class CandidatoService {
-  private readonly BASE_URL = 'http://localhost:8080/candidatos';
+  private readonly BASE_URL = 'https://ws-cotas.herokuapp.com/candidatos';
   curso: Curso;
 
   constructor(private http: HttpClient, private router: Router) {}

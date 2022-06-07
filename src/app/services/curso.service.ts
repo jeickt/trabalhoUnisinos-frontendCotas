@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class CursoService {
-  private readonly BASE_URL = 'http://localhost:8080/cursos';
+  private readonly BASE_URL = 'https://ws-cotas.herokuapp.com/cursos';
 
   constructor(private http: HttpClient) {}
 
