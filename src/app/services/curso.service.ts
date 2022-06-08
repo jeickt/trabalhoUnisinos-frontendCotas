@@ -12,7 +12,7 @@ export class CursoService {
     let headers = new HttpHeaders();
     headers.append(
       'Access-Control-Allow-Origin',
-      'https://fe-cotas.netlify.app/'
+      'https://fe-cotas.netlify.app'
     );
     return this.http.get(this.BASE_URL, { headers: headers });
   }
