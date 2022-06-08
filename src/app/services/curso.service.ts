@@ -9,11 +9,6 @@ export class CursoService {
   constructor(private http: HttpClient) {}
 
   listarTodos(): Observable<any> {
-    let headers = new HttpHeaders();
-    headers.append(
-      'Access-Control-Allow-Origin',
-      'https://fe-cotas.netlify.app'
-    );
-    return this.http.get(this.BASE_URL, { headers: headers });
+    return this.http.get(this.BASE_URL);
   }
 }
