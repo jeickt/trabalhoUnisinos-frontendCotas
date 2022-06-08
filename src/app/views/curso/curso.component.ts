@@ -99,24 +99,21 @@ export class CursoComponent implements OnInit {
   }
 
   callResultFile(): void {
-    // let promise = new Promise<Candidato[]>((resolve) => {
-    //   this.candidatoService
-    //     .callResultFile(this.candidatos, this.cotasAExcluir)
-    //     .subscribe((response) => {
-    //       resolve(response);
-    //     });
-    // });
-
-    // promise.then((resultado) => {
-    //   console.log(resultado);
-    // });
-    setTimeout(() => {
-      let promise = this.gerarLista(++this.chamada);
-      promise.then((resultado) => {
+    let promise = new Promise<Candidato[]>((resolve) => {
+      this.candidatoService
+        .callResultFile(this.candidatos, this.cotasAExcluir)
+        .subscribe((response) => {
+          resolve(response);
+        });
+    });
+    promise
+      .then((_) => {
+        return this.gerarLista(++this.chamada);
+      })
+      .then((resultado) => {
         this.candidatos = resultado.sort(this.ordenarLista);
         ++this.pagina;
       });
-    }, 400);
   }
 
   deleteData(): void {
